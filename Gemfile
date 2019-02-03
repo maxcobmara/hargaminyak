@@ -53,5 +53,8 @@ group :production do
   gem 'pg', '~> 1.1', '>= 1.1.4'
 end
 
+gem 'slim', '~> 4.0', '>= 4.0.1'
+gem 'seed_dump', '~> 3.3', '>= 3.3.1'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
