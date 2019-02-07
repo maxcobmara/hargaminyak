@@ -1,0 +1,22 @@
+= form_for @price do |f|
+  - if @price.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@price.errors.count, "error")} prohibited this price from being saved:"
+      ul
+        - @price.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :entity_id
+    = f.collection_select :entity_id, Entity.all.order(name: :asc), :id, :name
+
+  .field
+    = f.label :price_on
+    = f.date_select :price_on
+  .field
+    = f.label :price
+    = f.number_field :price
+  .field
+    = f.label :data
+    = f.text_area :data
+  .actions = f.submit

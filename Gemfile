@@ -54,6 +54,7 @@ group :production do
 end
 
 gem 'slim', '~> 4.0', '>= 4.0.1'
+gem 'slim-rails', '~> 3.2'
 gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

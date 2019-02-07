@@ -3,6 +3,7 @@ class Setup < ActiveRecord::Migration[5.1]
     create_table :entities do |t|
       t.string   :name
       t.string   :description
+      t.timestamps
     end
 
     create_table :prices do |t|
@@ -11,6 +12,7 @@ class Setup < ActiveRecord::Migration[5.1]
       t.date        :price_on
       t.integer     :price
       t.text        :data
+      t.timestamps
     end
 
   end

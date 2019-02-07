@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20190101000001) do
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "prices", force: :cascade do |t|
@@ -23,6 +25,8 @@ ActiveRecord::Schema.define(version: 20190101000001) do
     t.date "price_on"
     t.integer "price"
     t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["entity_id"], name: "index_prices_on_entity_id"
   end
 
