@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi|Share+Tech+Mono');
+.home {
+  .pbox   {
+    padding: 15px;
+    .title  {color: white; font-size: 18pt; font-weight: 300;}
+    .price  {
+      span.rm {font-size: 18pt;}
+      color: white; text-align: center;
+      font-size: 64pt; font-weight: 300; font-family: 'Gugi', cursive;}
+  }
+  .hijau  {background-color: #67A373;}
+  .kuning {background-color: #F0D569;}
+  .hitam  {background-color: #2D2C2F;}
+}
