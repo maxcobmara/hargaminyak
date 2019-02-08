@@ -12,7 +12,7 @@ module PricesHelper
     when diff < 0
       "#{diff.abs.to_s}<BR/><i class='icon icon-2x icon-arrow-down'></i>".html_safe
     when diff > 0
-      "up"
+      "<i class='icon icon-2x icon-arrow-up'></i><BR/>#{diff.abs.to_s}".html_safe
     end
 
   end
