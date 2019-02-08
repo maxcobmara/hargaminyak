@@ -1,16 +1,22 @@
 .columns.home
-  .column.col-4.col-sm-12.pbox.kuning
+  .column.col-4.col-md-12.pbox.kuning
     .title RON 95
     .price
       span.rm RM
-      | 2.85
-  .column.col-4.col-sm-12.pbox.hijau
+      = format(@kuning)
+      .previous
+        = format_previous(@kuning)
+  .column.col-4.col-md-12.pbox.hijau
     .title RON 97
     .price
       span.rm RM
-      | 2.85
-  .column.col-4.col-sm-12.pbox.hitam
+      = format(@hijau)
+      .previous
+        = format_previous(@hijau)
+  .column.col-4.col-md-12.pbox.hitam
     .title Diesel
     .price
       span.rm RM
-      | 2.85
+      = format(@hitam)
+      .previous
+        = format_previous(@hitam)

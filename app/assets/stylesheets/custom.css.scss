@@ -5,8 +5,13 @@
     .title  {color: white; font-size: 18pt; font-weight: 300;}
     .price  {
       span.rm {font-size: 18pt;}
+      position:relative;
       color: white; text-align: center;
       font-size: 64pt; font-weight: 300; font-family: 'Gugi', cursive;}
+      .previous {
+        font-size: 16pt;  font-family: sans-serif; font-weight: 100;
+        line-height: 50%;
+        position:absolute; top: 40%; right:2%;}
   }
   .hijau  {background-color: #67A373;}
   .kuning {background-color: #F0D569;}
