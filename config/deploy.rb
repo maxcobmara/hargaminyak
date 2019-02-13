@@ -28,6 +28,10 @@ set :forward_agent, true     # SSH forward_agent.
 # set :shared_dirs, fetch(:shared_dirs, []).push('public/assets')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml')
 set :shared_paths, ['tmp/pids', 'tmp/sockets']
+set :puma_state, "#{fetch(:shared_path)}/tmp/sockets/puma.state"
+set :puma_socket, "#{fetch(:shared_path)}/tmp/sockets/puma.sock"
+set :puma_pid, "#{fetch(:shared_path)}/tmp/pids/puma.pid"
+set :start_port, 3000
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
@@ -44,10 +48,6 @@ end
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
   # command %{rbenv install 2.3.0 --skip-existing}
-  queue! %(mkdir -p "#{deploy_to}/#{shared_path}/tmp/sockets")
-  queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp/sockets")
-  queue! %(mkdir -p "#{deploy_to}/#{shared_path}/tmp/pids")
-  queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp/pids")
 end
 
 desc "Deploys the current version to the server."
