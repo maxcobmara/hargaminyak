@@ -53,11 +53,6 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 #
 
 # Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart
-
-
-if RAILS.env.production?
-
 
 environment "production"
 
@@ -73,5 +68,4 @@ daemonize true
 
 activate_control_app 'unix:///var/www/hargaminyak.info/shared/tmp/sockets/pumactl.sock'
 prune_bundler
-
-end
+plugin :tmp_restart
