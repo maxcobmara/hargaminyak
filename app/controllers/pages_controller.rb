@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @kuning = Price.kuning.limit(2).pluck(:price)
     @hijau = Price.hijau.limit(2).pluck(:price)
     @hitam = Price.hitam.limit(2).pluck(:price)
+    @biru = Price.biru.limit(2).pluck(:price)
   end
 
   def about
