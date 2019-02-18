@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '*path' => redirect('/') unless Rails.env.development?
 
   resources :entities
   resources :prices
