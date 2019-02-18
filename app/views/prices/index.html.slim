@@ -1,29 +1,24 @@
 h1 Listing prices
 
-table
+= link_to new_icon, new_price_path
+
+table.table
   thead
     tr
-      th Entity
-      th Entity name
+      th Entity Name
       th Price on
       th Price
       th Data
-      th
-      th
-      th
+      th Actions
 
   tbody
     - @prices.each do |price|
       tr
-        td = price.entity_id
         td = price.entity_name
         td = price.price_on
         td = price.price
         td = price.data
-        td = link_to 'Show', price
-        td = link_to 'Edit', edit_price_path(price)
-        td = link_to 'Destroy', price, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Price', new_price_path
+        td
+          = link_to show_icon, price
+          = link_to edit_icon, edit_price_path(price)
+          = link_to trash_icon, price, data: { confirm: 'Are you sure?' }, method: :delete

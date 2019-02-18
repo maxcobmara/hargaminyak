@@ -1,12 +1,12 @@
 h1 Listing entities
 
-table
+= link_to new_icon, new_entity_path
+
+table.table
   thead
     tr
       th Name
       th Description
-      th
-      th
       th
 
   tbody
@@ -14,9 +14,10 @@ table
       tr
         td = entity.name
         td = entity.description
-        td = link_to 'Show', entity
-        td = link_to 'Edit', edit_entity_path(entity)
-        td = link_to 'Destroy', entity, data: { confirm: 'Are you sure?' }, method: :delete
+        td
+          = link_to show_icon, entity
+          = link_to edit_icon, edit_entity_path(entity)
+          = link_to trash_icon, entity, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
