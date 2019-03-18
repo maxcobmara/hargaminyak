@@ -6,6 +6,9 @@ class PagesController < ApplicationController
     @biru = Price.biru.limit(2).pluck(:price)
   end
 
+  def chart
+  end
+
   def about
   end
 end
