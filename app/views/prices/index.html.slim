@@ -2,6 +2,11 @@ h1 Listing prices
 
 = link_to new_icon, new_price_path
 
+- entities = Entity.all.pluck(:name)
+ul.menu
+  - entities.each do | entity |
+    li= link_to "#{entity}", :action => "index", :search => "#{entity}"
+
 table.table
   thead
     tr

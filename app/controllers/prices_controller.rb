@@ -4,7 +4,11 @@ class PricesController < ApplicationController
   # GET /prices
   # GET /prices.json
   def index
-    @prices = Price.all
+    if params[:search]
+      @prices = Price.where(entity_name: params[:search])
+    else
+      @prices = Price.all
+    end
   end
 
   # GET /prices/1
