@@ -58,7 +58,7 @@ gem 'slim-rails', '~> 3.2'
 gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 gem 'mina', '~> 1.2', '>= 1.2.3'
 gem 'mina-puma', :require => false
-gem 'chartkick', '~> 3.0', '>= 3.0.2'
+gem 'chartkick', '~> 3.4.0'
 gem 'groupdate'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
