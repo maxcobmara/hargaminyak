@@ -53,19 +53,4 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 #
 
 # Allow puma to be restarted by `rails restart` command.
-
-environment "production"
-
-bind  "unix:///var/www/hargaminyak.info/shared/tmp/sockets/puma.sock"
-pidfile "/var/www/hargaminyak.info/shared/tmp/pids/puma.pid"
-state_path "/var/www/hargaminyak.info/shared/tmp/sockets/puma.state"
-directory "/var/www/hargaminyak.info/current"
-
-workers 2
-threads 1,2
-
-daemonize true
-
-activate_control_app 'unix:///var/www/hargaminyak.info/shared/tmp/sockets/pumactl.sock'
-prune_bundler
 plugin :tmp_restart
