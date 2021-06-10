@@ -5,8 +5,8 @@ require 'mina/git'
 require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 require 'mina/puma'
 
-set :shared_files, fetch(:shared_files, []).push('config/database.yml')
-set :shared_paths, ['tmp/pids', 'tmp/sockets', 'config/secrets.yml']
+set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/master.key')
+set :shared_paths, ['tmp/pids', 'tmp/sockets']
 set :puma_state, "#{fetch(:shared_path)}/tmp/sockets/puma.state"
 set :puma_socket, "#{fetch(:shared_path)}/tmp/sockets/puma.sock"
 set :puma_pid, "#{fetch(:shared_path)}/tmp/pids/puma.pid"
