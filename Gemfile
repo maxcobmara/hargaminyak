@@ -58,7 +58,6 @@ gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 gem 'mina', '~> 1.2', '>= 1.2.3'
 gem 'mina-puma', :require => false
 gem 'mina-multistage', '~> 1.0.3', require: false
-gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 gem 'chartkick', '~> 3.4.0'
 gem 'groupdate'
 
