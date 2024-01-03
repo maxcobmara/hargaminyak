@@ -12,7 +12,7 @@ Entity.create!([
 ])
 
 #RON95
-Prices.create!([
+Price.create!([
   {entity_id: 1, entity_name: "RON95", price_on: "28 Dec 2023".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "21 Dec 2023".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "14 Dec 2023".to_date, price:	205}, 
@@ -172,7 +172,7 @@ Prices.create!([
 ])
 
 #RON97
-Prices.create!([
+Price.create!([
   {entity_id: 2, entity_name: "RON97", price_on: "28 Dec 2023".to_date, price:	347},
   {entity_id: 2, entity_name: "RON97", price_on: "21 Dec 2023".to_date, price:	347},
   {entity_id: 2, entity_name: "RON97", price_on: "14 Dec 2023".to_date, price:	347},
@@ -332,7 +332,7 @@ Prices.create!([
 ])
 
 #Diesel
-Prices.create!([
+Price.create!([
   {entity_id: 3, entity_name: "Diesel", price_on: "28 Dec 2023".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "21 Dec 2023".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "14 Dec 2023".to_date, price:	215},
