@@ -169,19 +169,11 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-<<<<<<< HEAD
-    rails-html-sanitizer (1.4.4)
-      loofah (~> 2.19, >= 2.19.1)
-    railties (5.2.4.6)
-      actionpack (= 5.2.4.6)
-      activesupport (= 5.2.4.6)
-=======
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
     railties (5.2.8.1)
       actionpack (= 5.2.8.1)
       activesupport (= 5.2.8.1)
->>>>>>> master
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
