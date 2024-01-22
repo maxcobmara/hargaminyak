@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Gugi|Share+Tech+Mono');
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .home {
   .pbox   {
     padding: 15px;
@@ -20,7 +25,8 @@
 }
 
 .chart_page {
-  .search_bar {text-align:center;}
+  padding: 1em;
+  .search_bar {text-align:center; background-color: #EEE; margin-bottom:0.5em;}
 }
 
 .form {
@@ -29,6 +35,10 @@
 }
 
 .footer {
-  text-align: center;
+  margin-top: auto;
+  padding: 1em;
   font-weight: light; color:#CCC; font-family: 'Gugi', cursive; font-size: 10pt;
+  .about {text-align: left;}
+  .copy  {text-align: center;}
+  .hire  {text-align: right;}
 }
