@@ -1,1 +1,11 @@
-=line_chart Price.group(:entity_name).group_by_week(:price_on).sum(:price)
+.chart_page.columns
+  .col-4.col-mx-auto.search_bar
+    = link_to "1M", chart_path(search: "1M"), class: "btn btn-link"
+    = link_to "3M", chart_path(search: "3M"), class: "btn btn-link"
+    = link_to "6M", chart_path(search: "6M"), class: "btn btn-link"
+    = link_to "1Y", chart_path(search: "1Y"), class: "btn btn-link"
+    = link_to "3Y", chart_path(search: "3Y"), class: "btn btn-link"
+    = link_to "5Y", chart_path(search: "5Y"), class: "btn btn-link"
+    = link_to "ALL", chart_path, class: "btn btn-link"
+  .col-12.col-mx-auto
+    = line_chart @prices

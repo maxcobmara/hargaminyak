@@ -5,7 +5,7 @@ module PricesHelper
   end
 
   def format_previous(prices)
-    diff = prices[0] - prices[1]
+    diff = prices[0].to_i - prices[1].to_i
     case
     when diff == 0
       "<i class='icon icon-2x icon-resize-vert'></i>".html_safe
