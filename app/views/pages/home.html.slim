@@ -20,10 +20,11 @@
       = format(@hitam)
       .previous
         = format_previous(@hitam)
-  .column.col-12.col-lg-12.pbox.biru
-    .title Euro5 Diesel
-    .price
-      span.rm RM
-      = format(@biru)
-      .previous
-        = format_previous(@biru)
+  - unless @biru.blank?
+    .column.col-12.col-lg-12.pbox.biru
+      .title Euro5 Diesel
+      .price
+        span.rm RM
+        = format[@biru]
+        .previous
+          = format_previous(@biru)
