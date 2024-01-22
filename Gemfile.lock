@@ -226,13 +226,13 @@ DEPENDENCIES
   capybara (~> 2.13)
   chartkick (~> 3.4.2)
   coffee-rails (~> 4.2)
-  groupdate (~> 5.2.1)
+  groupdate
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mina (~> 1.2, >= 1.2.3)
   mina-multistage (~> 1.0.3)
   mina-puma
-  pg (~> 1.2.3)
+  pg (~> 1.1, >= 1.1.4)
   puma (~> 6.4.2)
   puma-daemon (~> 0.3.2)
   rails (~> 5.2.8.1)
