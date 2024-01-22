@@ -13,6 +13,9 @@ Entity.create!([
 
 #RON95
 Price.create!([
+  {entity_id: 1, entity_name: "RON95", price_on: "18 Jan 2024".to_date, price:	205}, 
+  {entity_id: 1, entity_name: "RON95", price_on: "11 Jan 2024".to_date, price:	205}, 
+  {entity_id: 1, entity_name: "RON95", price_on: "04 Jan 2024".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "28 Dec 2023".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "21 Dec 2023".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "14 Dec 2023".to_date, price:	205}, 
@@ -81,6 +84,7 @@ Price.create!([
   {entity_id: 1, entity_name: "RON95", price_on: "29 Sep 2022".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "22 Sep 2022".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "15 Sep 2022".to_date, price:	205}, 
+  {entity_id: 1, entity_name: "RON95", price_on: "08 Sep 2022".to_date, price:	205},
   {entity_id: 1, entity_name: "RON95", price_on: "01 Sep 2022".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "25 Aug 2022".to_date, price:	205}, 
   {entity_id: 1, entity_name: "RON95", price_on: "18 Aug 2022".to_date, price:	205}, 
@@ -173,6 +177,9 @@ Price.create!([
 
 #RON97
 Price.create!([
+  {entity_id: 2, entity_name: "RON97", price_on: "18 Jan 2024".to_date, price:	347}, 
+  {entity_id: 2, entity_name: "RON97", price_on: "11 Jan 2024".to_date, price:	347}, 
+  {entity_id: 2, entity_name: "RON97", price_on: "04 Jan 2024".to_date, price:	347}, 
   {entity_id: 2, entity_name: "RON97", price_on: "28 Dec 2023".to_date, price:	347},
   {entity_id: 2, entity_name: "RON97", price_on: "21 Dec 2023".to_date, price:	347},
   {entity_id: 2, entity_name: "RON97", price_on: "14 Dec 2023".to_date, price:	347},
@@ -241,6 +248,7 @@ Price.create!([
   {entity_id: 2, entity_name: "RON97", price_on: "29 Sep 2022".to_date, price:	400},
   {entity_id: 2, entity_name: "RON97", price_on: "22 Sep 2022".to_date, price:	405},
   {entity_id: 2, entity_name: "RON97", price_on: "15 Sep 2022".to_date, price:	415},
+  {entity_id: 2, entity_name: "RON97", price_on: "08 Sep 2022".to_date, price:	420},
   {entity_id: 2, entity_name: "RON97", price_on: "01 Sep 2022".to_date, price:	430},  
   {entity_id: 2, entity_name: "RON97", price_on: "25 Aug 2022".to_date, price:	430},
   {entity_id: 2, entity_name: "RON97", price_on: "18 Aug 2022".to_date, price:	435},
@@ -333,6 +341,9 @@ Price.create!([
 
 #Diesel
 Price.create!([
+  {entity_id: 3, entity_name: "Diesel", price_on: "18 Jan 2024".to_date, price:	215}, 
+  {entity_id: 3, entity_name: "Diesel", price_on: "11 Jan 2024".to_date, price:	215}, 
+  {entity_id: 3, entity_name: "Diesel", price_on: "04 Jan 2024".to_date, price:	215}, 
   {entity_id: 3, entity_name: "Diesel", price_on: "28 Dec 2023".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "21 Dec 2023".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "14 Dec 2023".to_date, price:	215},
@@ -401,6 +412,7 @@ Price.create!([
   {entity_id: 3, entity_name: "Diesel", price_on: "29 Sep 2022".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "22 Sep 2022".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "15 Sep 2022".to_date, price:	215},
+  {entity_id: 3, entity_name: "Diesel", price_on: "08 Sep 2022".to_date, price:	215}, 
   {entity_id: 3, entity_name: "Diesel", price_on: "01 Sep 2022".to_date, price:	215},  
   {entity_id: 3, entity_name: "Diesel", price_on: "25 Aug 2022".to_date, price:	215},
   {entity_id: 3, entity_name: "Diesel", price_on: "18 Aug 2022".to_date, price:	215},
