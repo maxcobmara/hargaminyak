@@ -17,4 +17,4 @@ daemonize true
 
 activate_control_app 'unix:///var/www/hargaminyak.info/shared/tmp/sockets/pumactl.sock'
 prune_bundler
-plugin :tmp_restart
+#plugin :tmp_restart

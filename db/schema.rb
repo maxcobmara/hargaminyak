@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_01_01_000001) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_01_01_000001) do
   end
 
   create_table "prices", force: :cascade do |t|
-    t.integer "entity_id"
+    t.bigint "entity_id"
     t.string "entity_name"
     t.date "price_on"
     t.integer "price"

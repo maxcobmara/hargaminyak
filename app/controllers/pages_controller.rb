@@ -23,7 +23,7 @@ class PagesController < ApplicationController
     else
       start = 100.years.ago
     end
-    @prices = Price.where(price_on: [start..Date.today]).group(:entity_name).group_by_week(:price_on).sum(:price)
+    @prices = Price.unscoped.where(price_on: [start..Date.today]).group(:entity_name).group_by_week(:price_on).sum(:price)
 
   end
 
