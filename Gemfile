@@ -39,7 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.4.0'
   gem 'webdrivers'
-  gem 'sqlite3', '~> 1.7.0'
+  gem 'sqlite3', '~> 1.6.0'
 end
 
 group :development do
@@ -52,7 +52,7 @@ group :development do
 end
 
 group :production do
-  
+
 end
 
 gem 'slim', '~> 5.1.0'
