@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EntitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @entity = entities(:one)
+    @entity = entities(:entity_one)
   end
 
   test "should get index" do

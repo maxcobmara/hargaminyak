@@ -20,7 +20,7 @@ class PricesControllerTest < ActionDispatch::IntegrationTest
       post prices_url, params: { price: { data: @price.data, entity_id: @price.entity_id, entity_name: @price.entity_name, price: @price.price, price_on: @price.price_on } }
     end
 
-    assert_redirected_to price_url(Price.last)
+    assert_redirected_to prices_url
   end
 
   test "should show price" do

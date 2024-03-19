@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  entity_id: 1
+  entity: entity_one
   entity_name: MyString
   price_on: 2019-02-04
   price: 1
   data: MyText
 
 two:
-  entity_id: 1
+  entity: entity_two
   entity_name: MyString
   price_on: 2019-02-04
   price: 1
