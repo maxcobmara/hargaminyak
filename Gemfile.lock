@@ -98,6 +98,10 @@ GEM
       activesupport (>= 5.2)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.2.3)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -252,6 +256,7 @@ DEPENDENCIES
   chartkick (~> 5.0.0)
   coffee-rails (~> 5.0.0)
   groupdate
+  importmap-rails (~> 1.2, >= 1.2.3)
   jbuilder (~> 2.5)
   listen (~> 3.5.0)
   mina (~> 1.2)
