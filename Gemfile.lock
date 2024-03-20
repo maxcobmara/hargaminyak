@@ -253,7 +253,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 3.4.0)
-  chartkick (~> 5.0.0)
+  chartkick
   coffee-rails (~> 5.0.0)
   groupdate
   importmap-rails (~> 1.2, >= 1.2.3)

@@ -20,7 +20,9 @@ gem 'uglifier', '~> 4.2.0'
 #rails7 stuff
 gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
-
+#-----
+gem 'chartkick'
+gem 'groupdate'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 5.0.0'
@@ -63,8 +65,7 @@ gem 'seed_dump', '~> 3.3.0'
 gem 'mina', '~> 1.2'
 gem 'mina-puma', :require => false
 gem 'mina-multistage', '~> 1.0.3', require: false
-gem 'chartkick', '~> 5.0.0'
-gem 'groupdate'
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
