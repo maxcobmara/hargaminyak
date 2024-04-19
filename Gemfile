@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 7.1'
 gem 'puma', '~> 6.4.2'
 gem 'puma-daemon', '~> 0.3.2', require: false
 # Use SCSS for stylesheets

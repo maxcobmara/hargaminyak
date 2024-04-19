@@ -3,4 +3,4 @@
 import "chartkick"
 import "Chart.bundle"
 
-alert('Hello World from ImportMaps')
+//alert('Hello World from ImportMaps')
