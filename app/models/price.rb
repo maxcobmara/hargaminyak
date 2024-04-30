@@ -9,6 +9,8 @@ class Price < ApplicationRecord
   scope :hijau, -> {where(entity_name: "RON97")}
   scope :hitam, -> {where(entity_name: "Diesel")}
   scope :biru, -> {where(entity_name: "Diesel Euro5")}
+  scope :blaze, -> {where(entity_name: "RON100")}
+  scope :merah, -> {where(entity_name: "VPower")}
 
   def set_entity_name
     self.entity_name = Entity.find(entity_id).name

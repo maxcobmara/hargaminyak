@@ -25,6 +25,25 @@
       .title Euro5 Diesel
       .price
         span.rm RM
-        = format[@biru]
+        = format(@biru)
         .previous
           = format_previous(@biru)
+
+  - unless @blaze.blank?
+    .column.col-12.col-lg-12.pbox.blaze
+      .title Petron Blaze 100 EURO4M
+      .price
+        span.rm RM
+        = format(@blaze)
+        .previous
+          = format_previous(@blaze)
+
+
+  - unless @merah.blank?
+    .column.col-12.col-lg-12.pbox.merah
+      .title Shell V-Power Racing
+      .price
+        span.rm RM
+        = format(@merah)
+        .previous
+          = format_previous(@merah)

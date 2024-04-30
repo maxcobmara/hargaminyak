@@ -1,7 +1,7 @@
 module PricesHelper
   def format(prices)
     price = prices[0]
-    price.to_f/100
+    sprintf("%.2f", price.to_f/100.round(2))
   end
 
   def format_previous(prices)

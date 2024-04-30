@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   def home
     @kuning = Price.kuning.limit(2).pluck(:price)
-    @hijau = Price.hijau.limit(2).pluck(:price)
-    @hitam = Price.hitam.limit(2).pluck(:price)
-    @biru = Price.biru.limit(2).pluck(:price)
+    @hijau  = Price.hijau.limit(2).pluck(:price)
+    @hitam  = Price.hitam.limit(2).pluck(:price)
+    @biru   = Price.biru.limit(2).pluck(:price)
+    @blaze  = Price.blaze.limit(2).pluck(:price)
+    @merah  = Price.merah.limit(2).pluck(:price)
   end
 
   def chart
