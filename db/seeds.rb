@@ -26,17 +26,17 @@ Price.create!([
   {entity_id: 1, entity_name: "RON95",  price_on: "18 Apr 2024".to_date, price:	205}, 
   {entity_id: 2, entity_name: "RON97",  price_on: "18 Apr 2024".to_date, price:	347},  
   {entity_id: 3, entity_name: "Diesel", price_on: "18 Apr 2024".to_date, price:	215}, 
-  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "25 Apr 2024".to_date, price:	235},  
+  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "18 Apr 2024".to_date, price:	235},  
   
   {entity_id: 1, entity_name: "RON95",  price_on: "11 Apr 2024".to_date, price:	205}, 
   {entity_id: 2, entity_name: "RON97",  price_on: "11 Apr 2024".to_date, price:	347},
   {entity_id: 3, entity_name: "Diesel", price_on: "11 Apr 2024".to_date, price:	215}, 
-  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "25 Apr 2024".to_date, price:	235},  
+  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "11 Apr 2024".to_date, price:	235},  
   
   {entity_id: 1, entity_name: "RON95",  price_on: "04 Apr 2024".to_date, price:	205}, 
   {entity_id: 2, entity_name: "RON97",  price_on: "04 Apr 2024".to_date, price:	347}, 
   {entity_id: 3, entity_name: "Diesel", price_on: "04 Apr 2024".to_date, price:	215},
-  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "25 Apr 2024".to_date, price:	235}
+  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "04 Apr 2024".to_date, price:	235}
 ])
 
 puts "2024 Q1 Fuel Prices"
