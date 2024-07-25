@@ -1,0 +1,12 @@
+.header
+  .columns
+    .column.col-4.chart
+      - if current_page?(root_url)
+        = link_to "Price Chart", chart_path(search: "3M")
+      - else
+        = link_to "Today's Prices", root_path
+    .column.col-4.title Harga Minyak dotInfo
+    .column.col-4.updated 
+      span last updated
+      = Price.order(updated_at: :desc).first.updated_at.to_date
+  | 

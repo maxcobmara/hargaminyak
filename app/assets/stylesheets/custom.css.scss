@@ -6,13 +6,13 @@ body {
 }
 .home {
   .pbox   {
-    padding: 15px;
+    padding: 15px; height:15vh;
     .title  {color: white; font-size: 16pt; font-weight: 300; float:left;}
     .price  {
       span.rm {font-size: 18pt;}
       position:relative;
-      color: white; padding-left: 40%;
-      font-size: 60pt; font-weight: 300; font-family: 'Gugi', cursive;}
+      color: white; padding-left: 45%;
+      font-size: 9vh; font-weight: 300; font-family: 'Gugi', cursive;}
       .previous {
         font-size: 18pt;  font-family: sans-serif; font-weight: 100;
         line-height: 50%;
@@ -35,6 +35,18 @@ body {
   padding: 2em 3em;
   h1 {font-weight: 600px; font-size: 18pt; border-bottom: solid 2px black;}
 }
+
+.header, .header a {
+  margin-top: auto;
+  padding: 1em;
+  font-weight: light; color:#888; font-family: 'Gugi', cursive; font-size: 10pt;
+  .chart {text-align: left;}
+  .title  {text-align: center; font-size: 12pt;color:#666; }
+  .updated  {text-align: right;
+    span {font-family: 'Arial'; font-size: 8pt; padding-right:0.4em; }
+  }
+}
+
 
 .footer {
   margin-top: auto;

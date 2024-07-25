@@ -1,10 +1,6 @@
 .footer
   .columns
     .column.col-4.about
-      - if current_page?(root_url)
-        = link_to "Price Chart", chart_path(search: "3M")
-      - else
-        = link_to "Today's Prices", root_path
     .column.col-4.copy &copy; 2019 - #{Date.today.year} @maxcobmara
-    .column.col-4.hire=  link_to "Hire Us", "#"
+    .column.col-4.hire
   | 
