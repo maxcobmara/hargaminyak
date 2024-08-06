@@ -8,5 +8,5 @@
     .column.col-4.title Harga Minyak dotInfo
     .column.col-4.updated 
       span last updated
-      = Price.order(updated_at: :desc).first.updated_at.to_date
+      = Price.order(price_on: :desc).first.price_on.to_date
   | 
