@@ -5,6 +5,17 @@
 Price.where(:price_on => ("12 Apr 2024".to_date)..("24 Apr 2024".to_date)).order(price_on: :asc)
 prices = Price.where(price_on: ("07 Apr 2024".to_date))
 
+Price.create!([
+  {entity_id: 1, entity_name: "RON95",  price_on: "09 Jan 2025".to_date, price:	205},
+  {entity_id: 2, entity_name: "RON97",  price_on: "09 Jan 2025".to_date, price:	333},
+  {entity_id: 3, entity_name: "Diesel", price_on: "09 Jan 2025".to_date, price:	303},
+  {entity_id: 4, entity_name: "Diesel Euro5", price_on: "09 Jan 2025".to_date, price:	323},
+  {entity_id: 5, entity_name: "RON100", price_on: "09 Jan 2025".to_date, price:	500},
+  {entity_id: 6, entity_name: "VPower", price_on: "09 Jan 2025".to_date, price:	626}
+])
+
+
+
 
 Price.create!([
   {entity_id: 1, entity_name: "RON95",  price_on: "02 Jan 2025".to_date, price:	205},
