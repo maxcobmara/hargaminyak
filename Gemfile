@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.2'
+gem 'rails', '~> 8.0'
 gem 'puma', '~> 6.4.3'
 gem 'puma-daemon', '~> 0.3.2', require: false
 # Use SCSS for stylesheets
@@ -46,7 +46,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.4'
   gem 'webdrivers'
-  gem 'sqlite3', '~> 1.6.0'
+gem 'sqlite3', '~> 2.6'
 end
 
 group :development do
