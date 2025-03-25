@@ -6,14 +6,12 @@ Price.where(:price_on => ("12 Apr 2024".to_date)..("24 Apr 2024".to_date)).order
 prices = Price.where(price_on: ("07 Apr 2024".to_date))
 
 Price.create!([
-<<<<<<< HEAD
   {entity_id: 1, entity_name: "RON95",  price_on: "09 Jan 2025".to_date, price:	205},
   {entity_id: 2, entity_name: "RON97",  price_on: "09 Jan 2025".to_date, price:	333},
   {entity_id: 3, entity_name: "Diesel", price_on: "09 Jan 2025".to_date, price:	303},
   {entity_id: 4, entity_name: "Diesel Euro5", price_on: "09 Jan 2025".to_date, price:	323},
   {entity_id: 5, entity_name: "RON100", price_on: "09 Jan 2025".to_date, price:	500},
   {entity_id: 6, entity_name: "VPower", price_on: "09 Jan 2025".to_date, price:	626}
-=======
   {entity_id: 1, entity_name: "RON95",  price_on: "26 Dec 2024".to_date, price:	205},
   {entity_id: 2, entity_name: "RON97",  price_on: "26 Dec  2024".to_date, price:	325},
   {entity_id: 3, entity_name: "Diesel", price_on: "26 Dec  2024".to_date, price:	295},
@@ -68,7 +66,6 @@ Price.create!([
 ])
 
 
-##-----
 older
 Price.create!([
   {entity_id: 1, entity_name: "RON95",  price_on: "14 Nov 2024".to_date, price:	205},
@@ -328,19 +325,16 @@ Price.create!([
   {entity_id: 4, entity_name: "Diesel Euro5", price_on: "14 Mar 2024".to_date, price:	235},
   {entity_id: 5, entity_name: "RON100", price_on: "14 Mar 2024".to_date, price:	500},
   {entity_id: 6, entity_name: "VPower", price_on: "14 Mar 2024".to_date, price:	600}
->>>>>>> master
 ])
 
 
 Price.create!([
-<<<<<<< HEAD
   {entity_id: 1, entity_name: "RON95",  price_on: "31 Oct 2024".to_date, price:	205},
   {entity_id: 2, entity_name: "RON97",  price_on: "31 Oct  2024".to_date, price:	319},
   {entity_id: 3, entity_name: "Diesel", price_on: "31 Oct  2024".to_date, price:	295},
   {entity_id: 4, entity_name: "Diesel Euro5", price_on: "31 Oct 2024".to_date, price:	315},
   {entity_id: 5, entity_name: "RON100", price_on: "31 Oct 2024".to_date, price:	500},
   {entity_id: 6, entity_name: "VPower", price_on: "31 Oct 2024".to_date, price:	620},
-=======
   {entity_id: 1, entity_name: "RON95",  price_on: "06 Jun 2024".to_date, price:	205},
   {entity_id: 2, entity_name: "RON97",  price_on: "06 Jun".to_date, price:	347},
   {entity_id: 3, entity_name: "Diesel", price_on: "06 Jun".to_date, price:	215},
@@ -375,12 +369,10 @@ Price.create!([
   {entity_id: 4, entity_name: "Diesel Euro5", price_on: "16 May 2024".to_date, price:	235},
   {entity_id: 5, entity_name: "RON100", price_on: "16 May 2024".to_date, price:	500},
   {entity_id: 6, entity_name: "VPower", price_on: "16 May 2024".to_date, price:	640}
->>>>>>> master
 ])
 
 
 
-<<<<<<< HEAD
 
 
 
