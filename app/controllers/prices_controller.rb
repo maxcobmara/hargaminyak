@@ -1,5 +1,5 @@
 class PricesController < ApplicationController
-  allow_unauthenticated_access only %i[ index ]
+  allow_unauthenticated_access only: %i[ index ]
   before_action :set_price, only: [:show, :edit, :update, :destroy]
 
   # GET /prices
@@ -10,7 +10,6 @@ class PricesController < ApplicationController
     else
       @prices = Price.all
     end
-    raise "some exception"
   end
 
   # GET /prices/1
@@ -20,6 +19,7 @@ class PricesController < ApplicationController
 
   # GET /prices/new
   def new
+    @entities = Entity.pluck(:name)
     @price = Price.new
   end
 
@@ -30,17 +30,27 @@ class PricesController < ApplicationController
   # POST /prices
   # POST /prices.json
   def create
-    @price = Price.new(price_params)
+    #@price = Price.new(price_params)
 
-    respond_to do |format|
-      if @price.save
-        format.html { redirect_to prices_path, notice: 'Price was successfully created.' }
-        format.json { render :show, status: :created, location: @price }
-      else
-        format.html { render :new }
-        format.json { render json: @price.errors, status: :unprocessable_entity }
+    @entities = Entity.pluck(:name)
+
+    @entities.each do | entity |
+      fuel = Entity.find_by_name(entity)
+      fuel_price = price_params["price_#{entity.parameterize.underscore}"].to_i
+      if fuel_price > 0
+        Price.create!(entity_id: fuel.id, entity_name: fuel.name,  price_on: price_params["common_date"].to_date, price: fuel_price)
       end
     end
+
+    #respond_to do |format|
+    #  if @price.save
+    #    format.html { redirect_to prices_path, notice: 'Price was successfully created.' }
+    #    format.json { render :show, status: :created, location: @price }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @price.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /prices/1
@@ -75,6 +85,6 @@ class PricesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def price_params
-      params.require(:price).permit(:entity_id, :entity_name, :price_on, :price, :data)
+      params.permit(:authenticity_token, :commit, :common_date, :price_ron95, :price_ron97, :price_diesel, :price_diesel_euro5, :price_ron100, :price_vpower )
     end
 end

@@ -7,27 +7,18 @@
           li = message
 
   .form-group
-    .col-1.col-sm-10
-      .form-label= f.label :entity_id
-    .col-5.col-sm-10
-      = f.collection_select :entity_id, Entity.all.order(name: :asc), :id, :name, {}, {class: "form-select"}
-
-  .form-group
-    .col-1.col-sm-10
+    .col-2.col-sm-10
       .form-label= f.label :price_on
-    .col-5.col-sm-10
-      = f.date_select :price_on
-  .form-group
-    .col-1.col-sm-10
-      .form-label= f.label :price
-    .col-5.col-sm-10
-      = f.number_field :price
-  .form-group
-    .col-1.col-sm-10
-      .form-label= f.label :data
-    .col-5.col-sm-10
-      = f.text_area :data, class: "form-input"
-  .form-group
-    .col-1.col-sm-10
-    .col-5.col-sm-10
-      .actions= f.submit
+    .col-3.col-sm-10
+      = date_field_tag "common_date",  nil, class: "form-input"
+
+
+  - @entities.each do | entity |
+
+    .form-group
+      .col-2.col-sm-10
+        .form-label= f.label (entity + " price")
+      .col-2.col-sm-10
+        = number_field_tag "price_#{entity.parameterize.underscore}",  nil, class: "form-input"
+
+  .actions= f.submit
