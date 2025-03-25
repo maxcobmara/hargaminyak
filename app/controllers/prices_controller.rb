@@ -1,4 +1,5 @@
 class PricesController < ApplicationController
+  allow_unauthenticated_access only %i[ index ]
   before_action :set_price, only: [:show, :edit, :update, :destroy]
 
   # GET /prices

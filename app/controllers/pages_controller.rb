@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  allow_unauthenticated_access only: %i[ home chart about ]
+
   def home
     @kuning = Price.kuning.limit(2).pluck(:price)
     @hijau  = Price.hijau.limit(2).pluck(:price)
