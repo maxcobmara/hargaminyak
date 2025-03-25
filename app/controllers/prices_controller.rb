@@ -9,6 +9,7 @@ class PricesController < ApplicationController
     else
       @prices = Price.all
     end
+    raise "some exception"
   end
 
   # GET /prices/1

@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'pg', '~> 1.3.0'
+gem 'pg', '~> 1.3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,16 +51,16 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '~> 4.0.0'
-  gem 'listen', '~> 3.5.0'
+  gem 'web-console', '~> 4.2.1'
+  gem 'listen', '~> 3.9.0'
 end
 
 group :production do
 
 end
 
-gem 'slim', '~> 5.1.0'
-gem 'slim-rails', '~> 3.6.0'
+gem 'slim', '~> 5.2.1'
+gem 'slim-rails', '~> 3.7.0'
 gem 'seed_dump', '~> 3.3.0'
 gem 'mina', '~> 1.2'
 gem 'mina-puma', :require => false
