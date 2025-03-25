@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1'
+gem 'rails', '~> 8.0'
 gem 'puma', '~> 6.4.3'
 gem 'puma-daemon', '~> 0.3.2', require: false
 # Use SCSS for stylesheets
@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'pg', '~> 1.3.0'
+gem 'pg', '~> 1.3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,21 +46,21 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.4'
   gem 'webdrivers'
-  gem 'sqlite3', '~> 1.6.0'
+  gem 'sqlite3', '~> 2.6'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '~> 4.0.0'
-  gem 'listen', '~> 3.5.0'
+  gem 'web-console', '~> 4.2.1'
+  gem 'listen', '~> 3.9.0'
 end
 
 group :production do
 
 end
 
-gem 'slim', '~> 5.1.0'
-gem 'slim-rails', '~> 3.6.0'
+gem 'slim', '~> 5.2.1'
+gem 'slim-rails', '~> 3.7.0'
 gem 'seed_dump', '~> 3.3.0'
 gem 'mina', '~> 1.2'
 gem 'mina-puma', :require => false
@@ -69,3 +69,5 @@ gem 'mina-multistage', '~> 1.0.3', require: false
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "bcrypt", "~> 3.1"

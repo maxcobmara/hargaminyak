@@ -1,0 +1,33 @@
+= form_for @price, html: { class: 'form-horizontal' } do |f|
+  - if @price.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@price.errors.count, "error")} prohibited this price from being saved:"
+      ul
+        - @price.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    .col-1.col-sm-10
+      .form-label= f.label :entity_id
+    .col-5.col-sm-10
+      = f.collection_select :entity_id, Entity.all.order(name: :asc), :id, :name, {}, {class: "form-select"}
+
+  .form-group
+    .col-1.col-sm-10
+      .form-label= f.label :price_on
+    .col-5.col-sm-10
+      = f.date_select :price_on
+  .form-group
+    .col-1.col-sm-10
+      .form-label= f.label :price
+    .col-5.col-sm-10
+      = f.number_field :price
+  .form-group
+    .col-1.col-sm-10
+      .form-label= f.label :data
+    .col-5.col-sm-10
+      = f.text_area :data, class: "form-input"
+  .form-group
+    .col-1.col-sm-10
+    .col-5.col-sm-10
+      .actions= f.submit
