@@ -3,6 +3,8 @@ class Setup < ActiveRecord::Migration[5.1]
     create_table :entities do |t|
       t.string   :name
       t.string   :description
+      t.string   :identifier
+      t.string   :govmy_id
       t.timestamps
     end
 
@@ -14,6 +16,5 @@ class Setup < ActiveRecord::Migration[5.1]
       t.text        :data
       t.timestamps
     end
-
   end
 end

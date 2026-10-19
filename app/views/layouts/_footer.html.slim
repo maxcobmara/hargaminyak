@@ -2,5 +2,7 @@
   .columns
     .column.col-4.about
     .column.col-4.copy &copy; 2019 - #{Date.today.year} @maxcobmara
-    .column.col-4.hire
+    .column.col-4.updated 
+      span last updated
+      = Price.order(price_on: :desc).first.price_on.to_date
   | 

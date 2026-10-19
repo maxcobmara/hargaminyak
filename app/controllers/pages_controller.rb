@@ -2,13 +2,57 @@ class PagesController < ApplicationController
   allow_unauthenticated_access only: %i[ home chart about ]
 
   def home
-    @kuning = Price.kuning.limit(2).pluck(:price)
-    @hijau  = Price.hijau.limit(2).pluck(:price)
-    @hitam  = Price.hitam.limit(2).pluck(:price)
-    @biru   = Price.biru.limit(2).pluck(:price)
-    @blaze  = Price.blaze.limit(2).pluck(:price)
-    @merah  = Price.merah.limit(2).pluck(:price)
+    all_entities = Entity.includes(:prices).to_a
+    entities_by_govmy_id = all_entities.index_by(&:govmy_id)
+    entities_by_id = all_entities.index_by(&:id)
+
+    if params[:ron95] == "skps"
+      rows = [
+        [entities_by_govmy_id["ron95_skps"], "kuning"],
+        [entities_by_govmy_id["diesel_skds"], "hitam"]
+      ]
+    else
+
+      ron95_field =
+        params[:ron95] == "budi95" ? "ron95_budi95" : "ron95"
+
+      diesel_field =
+        if params[:diesel] == "eastmsia"
+          "diesel_eastmsia"
+        elsif params[:ron95] == "budi95"
+          "diesel_budi"
+        else
+          "diesel"
+        end
+
+      rows = [
+        [entities_by_govmy_id[ron95_field], "kuning"],
+        [entities_by_id[2], "hijau"],
+        [entities_by_govmy_id[diesel_field], "hitam"],
+        [entities_by_id[4], "biru"],
+        [entities_by_id[5], "blaze"],
+        [entities_by_id[6], "merah"]
+      ]
+    end
+
+
+    @prices = rows.filter_map do |entity, identifier|
+      next unless entity
+
+      records = entity.prices.limit(2)
+      next if records.empty?
+
+      {
+        identifier: identifier,
+        title: entity.name,
+        description: entity.description,
+        values: records.map(&:price)
+      }
+    end
+
+    @stretched_mode = params[:ron95] == "skps"
   end
+
 
   def chart
     case params[:search]

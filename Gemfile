@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 2.13'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'pg', '~> 1.3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -56,7 +55,7 @@ group :development do
 end
 
 group :production do
-
+  gem 'pg', '~> 1.3.5'
 end
 
 gem 'slim', '~> 5.2.1'
@@ -71,3 +70,5 @@ gem 'mina-multistage', '~> 1.0.3', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "bcrypt", "~> 3.1"
+
+gem "roo", "~> 3.0"

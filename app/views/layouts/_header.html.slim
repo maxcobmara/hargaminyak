@@ -1,12 +1,19 @@
 .header
   .columns
+    .column.col-4.title Harga Minyak dotInfo
+    .column.col-4.toggle-bar
+      .toggle-group
+        span RON 95:
+        = link_to "Market", url_for(request.query_parameters.merge(ron95: "market")), class: ("active" unless params[:ron95] == "budi95")
+        = link_to "BUDI95", url_for(request.query_parameters.merge(ron95: "budi95")), class: ("active" if params[:ron95] == "budi95")
+        = link_to "SKPS", url_for(request.query_parameters.merge(ron95: "skps")), class: ("active" if params[:ron95] == "skps")
+
+      .toggle-group
+        span Diesel:
+        = link_to "Peninsula", url_for(request.query_parameters.merge(diesel: "peninsular")), class: ("active" unless params[:diesel] == "eastmsia")
+        = link_to "East Malaysia", url_for(request.query_parameters.merge(diesel: "eastmsia")), class: ("active" if params[:diesel] == "eastmsia")
     .column.col-4.chart
       - if current_page?(root_url)
         = link_to "Price Chart", chart_path(search: "3M")
       - else
         = link_to "Today's Prices", root_path
-    .column.col-4.title Harga Minyak dotInfo
-    .column.col-4.updated 
-      span last updated
-      = Price.order(price_on: :desc).first.price_on.to_date
-  | 

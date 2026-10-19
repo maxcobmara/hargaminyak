@@ -6,13 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Entity.create!([
-  {id: 1, name: "RON95",  description: "RON 95 Unleaded Fuel"},
-  {id: 2, name: "RON97",  description: "RON 97 Premium Unleaded Fuel"},
-  {id: 3, name: "Diesel", description: "Generic Diesel"},
-  {id: 4, name: "Diesel Euro5", description: "Diesel Euro 5 B7"},
-  {id: 5, name: "RON100", description: "Blaze 100 EURO 4M"},
-  {id: 6, name: "VPower", description: "Shell V-Power Racing"}
+  {id: 1, name: "RON 95",       identifier: "kuning", govmy_id: "ron95", description: "RON 95 Unleaded Fuel"},
+  {id: 2, name: "RON 97",       identifier: "hijau",  govmy_id: "ron97", description: "RON 97 Premium Unleaded Fuel"},
+  {id: 3, name: "Diesel",       identifier: "hitam",  govmy_id: "diesel", description: "Generic Diesel"},
+  {id: 4, name: "Diesel Euro5", identifier: "biru",   govmy_id: nil, description: "Diesel Euro 5 B7"},
+  {id: 5, name: "RON100",       identifier: "blaze",  govmy_id: nil, description: "Blaze 100 EURO 4M"},
+  {id: 6, name: "VPower",       identifier: "merah",  govmy_id: nil, description: "Shell V-Power Racing"},
+  {id: 7, name: "Budi 95",      identifier: "kuning", govmy_id: "ron95_budi95", description: "RON 95 Budi Subsidized Price"},
+  {id: 8, name: "RON 95 SKPS",  identifier: "kuning", govmy_id: "ron95_skps", description: "RON 95 SKPS Industry Pricing"},
+  {id: 9, name: "Diesel Budi",  identifier: "hitam",  govmy_id: "diesel_budi", description: "Diesel Budi Subsidized Price"},
+  {id: 10,name: "Diesel SKDS",  identifier: "hitam",  govmy_id: "diesel_skds", description: "Diesel SKDS Industry Pricing"},
+  {id: 11,name: "Diesel EM",    identifier: "hitam",  govmy_id: "diesel_eastmsia", description: "Diesel East Malaysia Pricing"}
 ])
+
 
 puts "2024 Q4 Fuel Prices"
 Price.create!([

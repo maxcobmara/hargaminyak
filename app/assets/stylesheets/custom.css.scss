@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Gugi|Share+Tech+Mono');
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.home {
-  .pbox   {
-    padding: 15px; height:15vh;
-    .title  {color: white; font-size: 16pt; font-weight: 300; float:left;}
-    .price  {
-      span.rm {font-size: 18pt;}
-      position:relative;
-      color: white; padding-left: 45%;
-      font-size: 9vh; font-weight: 300; font-family: 'Gugi', cursive;}
-      .previous {
-        font-size: 18pt;  font-family: sans-serif; font-weight: 100;
-        line-height: 50%;
-        position:absolute; top: 40%; right:2%;}
+
+
+html, body { margin: 0; min-height: 100%; }
+body {min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column;}
+
+.container {flex: 1 1 auto;  min-height: 0; display: flex; flex-direction: column; width: 100%; max-width: 100%;}
+
+.home { 
+   flex: 1 1 auto; min-height: 0; display: grid; grid-template-rows: repeat(6, minmax(0, 1fr)); gap: 4px;
+  &.stretched-mode {grid-template-rows: repeat(2, minmax(0, 1fr));}
+  .pbox {
+    box-sizing: border-box;
+    height: auto; min-height: 0; padding: clamp(4px, 1vh, 15px);
+    position: relative; overflow: hidden;
+
+    .title { 
+       position: absolute; top: clamp(4px, 1vh, 15px); left: clamp(4px, 1vh, 15px);
+       color: white; font-size: clamp(10px, 2vh, 32pt); font-weight: 700;  line-height: 1; z-index: 1;
+      .subtitle {display: block; font-size: 0.8em; font-weight: 300; margin-top: 3px; opacity: 0.85;}
+    }
+    .price-row { position: absolute;  inset: 0; display: grid; grid-template-columns: 1fr 5rem; align-items: center; gap: 0.5rem; padding: 0 clamp(4px, 1vh, 15px);}
+    .price {
+      display: flex; align-items: baseline;  justify-content: flex-end; white-space: nowrap;
+      color: white; font-size: clamp(24px, 9vh, 72px); font-weight: 300; font-family: 'Gugi', cursive;
+      .rm {font-size: 18pt; margin-right: 0.2em;}
+    }
+    .change  {display: flex; align-items: center; justify-content: flex-start; gap: 0.15em;
+      .increased {color: #ff4b4b;}
+      .decreased {color: #36d879;}
+      .unchanged {color: #ffffff;}
+    }
   }
   .hijau  {background-color: #67A373;}
   .kuning {background-color: #F0D569;}
@@ -36,23 +49,52 @@ body {
   h1 {font-weight: 600px; font-size: 18pt; border-bottom: solid 2px black;}
 }
 
-.header, .header a {
-  margin-top: auto;
-  padding: 1em;
-  font-weight: light; color:#888; font-family: 'Gugi', cursive; font-size: 10pt;
-  .chart {text-align: left;}
-  .title  {text-align: center; font-size: 12pt;color:#666; }
-  .updated  {text-align: right;
-    span {font-family: 'Arial'; font-size: 8pt; padding-right:0.4em; }
+
+.toggle-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: white;
+  color: #222;
+
+  .toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  a {
+    color: #222;
+    padding: 0.35rem 0.65rem;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  a.active {
+    background: #DDD;
+    font-weight: 600;
   }
 }
 
 
+.header, .header a {
+  padding: 5px 1em;
+  font-weight: light; color:#888; font-family: 'Gugi', cursive; font-size: 10pt;
+  .title  {text-align: left; font-size: 12pt;color:#666; padding-top: 0.8em;}
+  .chart {text-align: right; padding-top: 1em;}
+}
+
+
 .footer {
-  margin-top: auto;
   padding: 1em;
-  font-weight: light; color:#CCC; font-family: 'Gugi', cursive; font-size: 10pt;
+  font-weight: light; color:#888; font-family: 'Gugi', cursive; font-size: 10pt;
   .about {text-align: left;}
   .copy  {text-align: center;}
   .hire  {text-align: right;}
+  .updated  {text-align: right;
+    span {font-family: 'Arial'; font-size: 8pt; padding-right:0.4em; }
+  }
 }

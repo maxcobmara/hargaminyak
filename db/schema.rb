@@ -14,12 +14,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_023036) do
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "identifier"
+    t.string "govmy_id"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "prices", force: :cascade do |t|
-    t.bigint "entity_id"
+    t.integer "entity_id"
     t.string "entity_name"
     t.date "price_on"
     t.integer "price"
