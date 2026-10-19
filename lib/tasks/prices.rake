@@ -150,7 +150,7 @@ namespace :prices do
   end
 
 
-  desc "Update Shell V-Power Racing price from Shell's published workbook"
+  desc "Update Shell V-Power Racing and Diesel Euro 5 B7 prices"
   task update_shell: :environment do
     require "open-uri"
     require "json"
@@ -161,7 +161,17 @@ namespace :prices do
 
     model_url = "https://www.shell.com.my/fuels-oils-and-lubricants/shell-fuels/fuelprice.model.json"
 
-    # Discover the current spreadsheet URL from Shell's page model.
+    products = [
+      {
+        product: "Shell V-Power Racing",
+        entity_name: "VPower"
+      },
+      {
+        product: "Shell FuelSave Diesel Euro 5 B7",
+        entity_name: "Diesel Euro5"
+      }
+    ]
+
     model_response = URI.open(
       model_url,
       open_timeout: 10,
@@ -175,7 +185,7 @@ namespace :prices do
       case value
       when Hash
         if value["name"] == "src" &&
-           value["value"].to_s.match?(/\.xlsx(?:\?|$)/i)
+          value["value"].to_s.match?(/\.xlsx(?:\?|$)/i)
           xlsx_url = value["value"]
         else
           value.each_value do |child|
@@ -209,7 +219,6 @@ namespace :prices do
       file.flush
 
       workbook = Roo::Spreadsheet.open(file.path)
-
       sheet_name = workbook.sheets.first
       sheet = workbook.sheet(sheet_name)
 
@@ -222,9 +231,7 @@ namespace :prices do
 
       raise "Could not find the fuel-price table header" unless header_row_index
 
-      headers = sheet.row(header_row_index).map do |cell|
-        cell.to_s.strip
-      end
+      headers = sheet.row(header_row_index).map { |cell| cell.to_s.strip }
 
       product_column = headers.index("Fuel Product")
       peninsula_column = headers.index("Peninsular Malaysia Pump Price")
@@ -233,17 +240,6 @@ namespace :prices do
       unless product_column && peninsula_column && east_column
         raise "Unexpected Shell workbook columns: #{headers.inspect}"
       end
-
-      product_row_index = ((header_row_index + 1)..sheet.last_row).find do |index|
-        sheet.row(index)[product_column].to_s.strip.casecmp(
-          "Shell V-Power Racing"
-        ).zero?
-      end
-
-      raise "Shell V-Power Racing was not found in the workbook" unless
-        product_row_index
-
-      row = sheet.row(product_row_index)
 
       parse_price = lambda do |value|
         amount =
@@ -261,53 +257,62 @@ namespace :prices do
         (amount * 100).round.to_i
       end
 
-      peninsula_price = parse_price.call(row[peninsula_column])
-      east_price = parse_price.call(row[east_column])
+      products.each do |product_config|
+        product_name = product_config[:product]
+        entity = Entity.find_by!(name: product_config[:entity_name])
 
-      entity = Entity.find_by!(name: "VPower")
+        product_row_index = ((header_row_index + 1)..sheet.last_row).find do |index|
+          sheet.row(index)[product_column].to_s.strip.casecmp(product_name).zero?
+        end
 
-      price = Price.find_or_initialize_by(
-        entity_id: entity.id,
-        price_on: price_on
-      )
+        raise "#{product_name} was not found in the workbook" unless product_row_index
 
-      attributes = {
-        entity_name: entity.name,
-        price: peninsula_price,
-        data: {
-          source: "Shell Malaysia fuel-price workbook",
-          source_url: xlsx_url,
-          model_url: model_url,
-          sheet_name: sheet_name,
-          product: "Shell V-Power Racing",
-          peninsular_price_sen: peninsula_price,
-          east_malaysia_price_sen: east_price
+        row = sheet.row(product_row_index)
+
+        peninsula_price = parse_price.call(row[peninsula_column])
+        east_price = parse_price.call(row[east_column])
+
+        price = Price.find_or_initialize_by(
+          entity_id: entity.id,
+          price_on: price_on
+        )
+
+        attributes = {
+          entity_name: entity.name,
+          price: peninsula_price,
+          data: {
+            source: "Shell Malaysia fuel-price workbook",
+            source_url: xlsx_url,
+            model_url: model_url,
+            sheet_name: sheet_name,
+            product: product_name,
+            peninsular_price_sen: peninsula_price,
+            east_malaysia_price_sen: east_price
+          }
         }
-      }
 
-      # Avoid updating the record unnecessarily on repeated runs.
-      unchanged =
-        !price.new_record? &&
-        price.entity_name == attributes[:entity_name] &&
-        price.price == attributes[:price] &&
-        price.data == attributes[:data]
+        unchanged =
+          !price.new_record? &&
+          price.entity_name == attributes[:entity_name] &&
+          price.price == attributes[:price] &&
+          price.data == attributes[:data]
 
-      if unchanged
-        puts "Shell price unchanged: RM #{format('%.2f', peninsula_price / 100.0)}"
-      else
-        price.assign_attributes(attributes)
-        price.save!
+        if unchanged
+          puts "Shell price unchanged: #{product_name}"
+        else
+          price.assign_attributes(attributes)
+          price.save!
+          puts "Shell price saved: #{product_name}"
+        end
 
-        puts "Shell price saved."
+        puts "  Effective date: #{price_on}"
+        puts "  Peninsular:    RM #{format('%.2f', peninsula_price / 100.0)}"
+        puts "  East Malaysia: RM #{format('%.2f', east_price / 100.0)}"
+        puts "  Entity ID:     #{entity.id}"
       end
-
-      puts "Product:       Shell V-Power Racing"
-      puts "Effective date: #{price_on}"
-      puts "Peninsular:    RM #{format('%.2f', peninsula_price / 100.0)}"
-      puts "East Malaysia: RM #{format('%.2f', east_price / 100.0)}"
-      puts "Entity ID:     #{entity.id}"
     end
   end
+
 
 
 
